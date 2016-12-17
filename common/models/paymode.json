@@ -1,0 +1,22 @@
+{
+  "name": "paymode",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "mode": {
+      "type": "string",
+      "required": true
+    },
+    "charge": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

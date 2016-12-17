@@ -1,0 +1,50 @@
+{
+  "name": "stockqty",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "total": {
+      "type": "number",
+      "required": true
+    },
+    "forsale": {
+      "type": "number",
+      "required": true
+    },
+    "ordered": {
+      "type": "number",
+      "required": true
+    },
+    "return": {
+      "type": "number",
+      "required": true
+    },
+    "damage": {
+      "type": "number",
+      "required": true
+    },
+    "inquote": {
+      "type": "number",
+      "required": true
+    },
+    "withds": {
+      "type": "number",
+      "required": true
+    },
+    "onhold": {
+      "type": "number",
+      "required": true
+    },
+    "outbound": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

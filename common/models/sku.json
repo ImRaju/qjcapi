@@ -1,0 +1,56 @@
+{
+  "name": "sku",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "string",
+      "required": true
+    },
+    "instock": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "upc":{
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stock": {
+      "type": "hasOne",
+      "model": "stock",
+      "foreignKey": ""
+    },
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "productId_index": {"productId":1},
+    "code_index": {"code":1},  "options": { "unique": true },
+    "size_index": {"size":1},
+    "instock_index": {"instock":1}
+  },
+  "methods": {}
+}

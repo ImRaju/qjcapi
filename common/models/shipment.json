@@ -1,0 +1,84 @@
+{
+  "name": "shipment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "logistic": {
+      "type": "string",
+      "required": true
+    },
+    "trackingurl": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "trackingref": {
+      "type": "string"
+    },
+    "dropshipper": {
+      "type": "string"
+    },
+    "shipdate": {
+      "type": "date"
+    }
+  },
+  "relations": {
+    "customer": {
+      "type": "embedsOne",
+      "model": "customer",
+      "property": "customer"
+    },
+    "address": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "address"
+    },
+    "quoteitems": {
+      "type": "hasMany",
+      "model": "quoteitem",
+      "foreignKey": ""
+    },
+    "orderitems": {
+      "type": "hasMany",
+      "model": "orderitem",
+      "foreignKey": ""
+    },
+    "quote": {
+      "type": "belongsTo",
+      "model": "quote",
+      "foreignKey": ""
+    },
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": ""
+    }
+  },
+  "validations": [],
+  "acls": [],
+  "indexes": {
+    "orderid_index": {"orderid": 1},
+    "customer.email_index": {"customer.email":1},
+    "customer.group_index": {"customer.group":1},
+    "created_index": {"created":1},
+    "status_index": {"status":1}
+  },
+  "methods": {}
+}

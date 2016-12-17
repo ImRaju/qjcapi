@@ -1,0 +1,60 @@
+{
+  "name": "price",
+  "plural": "prices",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "group": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "mrp": {
+      "type": "number"
+    },
+    "map": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": ""
+    },
+    "pricelogs": {
+      "type": "hasMany",
+      "model": "pricelog",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "productId_index": {"productId":1},
+    "code": {"code":1},
+    "group": {"group":1}  
+  },
+  "methods": {}
+}

@@ -1,0 +1,23 @@
+{
+  "memory": {
+    "name": "memory",
+    "connector": "memory"
+  },
+  "mongoDS": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "qjcv2mo",
+    "name": "mongoDS",
+    "connector": "mongodb"
+  },
+  "container": {
+    "name": "container",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/scripts/tmp"
+  },
+  "transient": {
+    "name": "transient",
+    "connector": "transient"
+  }
+}

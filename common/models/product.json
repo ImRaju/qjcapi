@@ -1,0 +1,95 @@
+{
+  "name": "product",
+  "plural": "products",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "string",
+      "required": true
+    },
+    "hasopts": {
+      "type": "boolean",
+      "required": true
+    },
+    "brand": {
+      "type": "string"
+    },
+    "sample": {
+      "type": "boolean"
+    },
+    "instock": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "meta": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stock": {
+      "type": "hasOne",
+      "model": "stock",
+      "foreignKey": ""
+    },
+    "stocks": {
+      "type": "hasMany",
+      "model": "stock",
+      "foreignKey": ""
+    },
+    "skus": {
+      "type": "hasMany",
+      "model": "sku",
+      "foreignKey": ""
+    },
+    "media": {
+      "type": "hasMany",
+      "model": "media",
+      "foreignKey": ""
+    },
+    "infos": {
+      "type": "embedsMany",
+      "model": "productinfo",
+      "property": "infos",
+      "options": {
+        "forceId": true
+      }
+    },
+    "prices": {
+      "type": "hasMany",
+      "model": "price",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "code_index": {"code": 1}, "options": { "unique": true },
+    "meta.qjc_index": {"meta.qjc":1},
+    "meta.jd_index": {"meta.jd":1},
+    "meta.itemtype_index": {"meta.itemtype":1},
+    "instock_index": {"instock":1},
+    "hasopts_index": {"hasopts":1}  
+  },
+  "methods": {}
+}

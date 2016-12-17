@@ -1,0 +1,28 @@
+{
+  "name": "transactionlog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "before": {
+      "type": "transaction"
+    },
+    "after": {
+      "type": "transaction",
+      "required": true
+    },
+    "logdate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "indexes": {
+    "transactionId_index": {"transactionId":1}
+  },
+  "methods": {}
+}

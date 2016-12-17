@@ -1,0 +1,77 @@
+{
+  "name": "stocklog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true
+  },
+  "properties": {
+    "logqty": {
+      "type": "number",
+      "required": true
+    },
+    "costprice": {
+      "type": "number"
+    },
+    "saleprice": {
+      "type": "number"
+    },
+    "challancode": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "customer": {
+      "type": "string"
+    },
+    "dropshipper": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "before": {
+      "type": "embedsOne",
+      "model": "stockqty",
+      "property": "before"
+    },
+    "after": {
+      "type": "embedsOne",
+      "model": "stockqty",
+      "property": "after"
+    },
+    "stock": {
+      "type": "belongsTo",
+      "model": "stock",
+      "foreignKey": ""
+    },
+    "oitem": {
+      "type": "belongsTo",
+      "model": "orderitem",
+      "foreignKey": ""
+    },
+    "qitem": {
+      "type": "belongsTo",
+      "model": "quoteitem",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "stockId_index": {"stockId":1}
+  },
+  "methods": {}
+}

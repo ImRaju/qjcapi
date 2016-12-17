@@ -1,0 +1,35 @@
+{
+  "name": "ccard",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "owner": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "start": {
+      "type": "string"
+    },
+    "expires": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "cvv": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

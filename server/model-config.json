@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "memory",
+    "options": {
+      "realmRequired": true,
+      "realmDelimiter": ":"
+    }
+  },
+  "AccessToken": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "memory",
+    "public": false
+  },
+  "product": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "sku": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "media": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "productinfo": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "price": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "pricelog": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "stock": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "stocklog": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "quote": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "customer": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "discount": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "value": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "address": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "paymode": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "billitem": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "quoteitem": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "transaction": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "order": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "orderitem": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "ccard": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "stockqty": {
+    "dataSource": "transient",
+    "public": false
+  },
+  "orderlog": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "transactionlog": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "orderitemlog": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "shipment": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "Container": {
+    "dataSource": "container",
+    "public": false
+  },
+  "FileUploadError": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
+  "FileUpload": {
+    "dataSource": "mongoDS",
+    "public": true
+  }
+}

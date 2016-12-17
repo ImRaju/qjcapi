@@ -1,0 +1,132 @@
+{
+  "name": "order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "orderid": {
+      "type": "string",
+      "required": true
+    },
+    "logistic": {
+      "type": "string",
+      "required": true
+    },
+    "orderdate": {
+      "type": "date",
+      "required": false
+    },
+    "channel": {
+      "type": "string",
+      "required": false
+    },
+    "shippingrate": {
+      "type": "number",
+      "required": true
+    },
+    "tax": {
+      "type": "number"
+    },
+    "dropshipper": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object"
+    },
+    "txnstatus": {
+      "type": "string"
+    },
+    "shipstatus": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "embedsOne",
+      "model": "customer",
+      "property": "customer"
+    },
+    "billing": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "billing"
+    },
+    "shipping": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "shipping"
+    },
+    "discount": {
+      "type": "embedsOne",
+      "model": "discount",
+      "property": "discount"
+    },
+    "paymode": {
+      "type": "embedsOne",
+      "model": "paymode",
+      "property": "paymode"
+    },
+    "value": {
+      "type": "embedsOne",
+      "model": "value",
+      "property": "value"
+    },
+    "orderitems": {
+      "type": "hasMany",
+      "model": "orderitem",
+      "foreignKey": ""
+    },
+    "transactions": {
+      "type": "hasMany",
+      "model": "transaction",
+      "foreignKey": ""
+    },
+    "quote": {
+      "type": "belongsTo",
+      "model": "quote",
+      "foreignKey": ""
+    },
+    "orderlogs": {
+      "type": "hasMany",
+      "model": "orderlog",
+      "foreignKey": ""
+    },
+    "orderitemlogs": {
+      "type": "hasMany",
+      "model": "orderitemlog",
+      "foreignKey": ""
+    },
+    "shipments": {
+      "type": "hasMany",
+      "model": "shipment",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "orderid_index": {"orderid": 1}, "options": { "unique": true },
+    "customer.email_index": {"customer.email":1},
+    "customer.group_index": {"customer.group":1},
+    "created_index": {"created":1},
+    "status_index": {"status":1},
+    "value.total_index": {"value.total":1}  ,
+    "total_index": {
+      "channel":1,
+      "_customer.group":1,
+      "created":1
+    }
+  },
+  "methods": {}
+}

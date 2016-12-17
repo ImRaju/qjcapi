@@ -1,0 +1,46 @@
+{
+  "name": "value",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pending": {
+      "type": "number",
+      "required": true
+    },
+    "shipped": {
+      "type": "number",
+      "required": true
+    },
+    "discount": {
+      "type": "number",
+      "required": true
+    },
+    "charge": {
+      "type": "number",
+      "required": true
+    },
+    "return": {
+      "type": "number",
+      "required": true
+    },
+    "txntotal": {
+      "type": "number",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": true
+    },
+    "gtotal": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

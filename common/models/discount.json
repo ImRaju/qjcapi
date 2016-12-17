@@ -1,0 +1,23 @@
+{
+  "name": "discount",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "couponcode": {
+      "type": "string"
+    },
+    "cdiscount": {
+      "type": "number"
+    },
+    "adiscount": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

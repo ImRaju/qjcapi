@@ -1,0 +1,10 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": "server/explorer",
+    "apiInfo": {
+      "title": "qjcv2 API",
+      "description": "qjcv2 APIs for product, stock, quote and order"
+    }
+  }
+}

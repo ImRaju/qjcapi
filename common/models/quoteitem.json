@@ -1,0 +1,46 @@
+{
+  "name": "quoteitem",
+  "base": "billitem",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "expiredate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "qitem": {
+      "type": "belongsTo",
+      "model": "quoteitem",
+      "foreignKey": ""
+    },
+    "quote": {
+      "type": "belongsTo",
+      "model": "quote",
+      "foreignKey": ""
+    },
+    "shipment": {
+      "type": "belongsTo",
+      "model": "shipment",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

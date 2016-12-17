@@ -1,0 +1,29 @@
+{
+  "name": "orderitemlog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "before": {
+      "type": "orderitem"
+    },
+    "after": {
+      "type": "orderitem",
+      "required": true
+    },
+    "logdate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "indexes": {
+    "orderId_index": {"orderId":1},
+    "orderitemId_index": {"orderitemId":1}
+  },
+  "methods": {}
+}

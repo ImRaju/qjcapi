@@ -1,0 +1,57 @@
+{
+  "name": "address",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "required": false
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "zipcode": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "dba": {
+      "type": "string"
+    },
+    "taxid": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

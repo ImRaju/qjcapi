@@ -1,0 +1,44 @@
+{
+  "name": "customer",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "giftmessage": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "group": {
+      "type": "string",
+      "required": true
+    },
+    "remoteip": {
+      "type": "string",
+      "required": true
+    },
+    "creditdays": {
+      "type": "number"
+    },
+    "customerid": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

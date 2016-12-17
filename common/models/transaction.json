@@ -1,0 +1,83 @@
+{
+  "name": "transaction",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "paymode": {
+      "type": "string",
+      "required": true
+    },
+    "txndate": {
+      "type": "date",
+      "required": true
+    },
+    "txnvalue": {
+      "type": "number",
+      "required": true
+    },
+    "bookdate": {
+      "type": "date",
+      "required": true
+    },
+    "completedate": {
+      "type": "date"
+    },
+    "txnreqdata": {
+      "type": "object"
+    },
+    "txnresdata": {
+      "type": "object"
+    },
+    "orderid": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "billing": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "billing"
+    },
+    "ccards": {
+      "type": "hasOne",
+      "model": "ccard",
+      "foreignKey": "",
+      "options": {
+        "forceId": true
+      }
+    },
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": ""
+    },
+    "transactionlogs": {
+      "type": "hasMany",
+      "model": "transactionlog",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "orderId_index": {"orderId":1},
+    "created_index": {"created":1}
+  },
+  "methods": {}
+}

@@ -1,0 +1,63 @@
+{
+  "name": "orderitem",
+  "base": "billitem",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "belongsTo",
+      "model": "order",
+      "foreignKey": ""
+    },
+    "oitem": {
+      "type": "belongsTo",
+      "model": "orderitem",
+      "foreignKey": ""
+    },
+    "quoteitem": {
+      "type": "belongsTo",
+      "model": "quoteitem",
+      "foreignKey": ""
+    },
+    "orderitemlogs": {
+      "type": "hasMany",
+      "model": "orderitemlog",
+      "foreignKey": ""
+    },
+    "shipment": {
+      "type": "belongsTo",
+      "model": "shipment",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "orderid_index": {"orderid": 1},
+    "skucode_index": {"skucode":1},
+    "type_index": {"type":1},
+    "status_index": {"status":1},
+    "created_index": {"created":1},
+    "shipmentId_index": {"shipmentId":1}  
+  },
+  "methods": {}
+}

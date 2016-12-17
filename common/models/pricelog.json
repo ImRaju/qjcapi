@@ -1,0 +1,62 @@
+{
+  "name": "pricelog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "group": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "mrp": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "activ": {
+      "type": "boolean",
+      "required": true
+    },
+    "updated": {
+      "type": "date",
+      "required": true
+    },
+    "updby": {
+      "type": "number",
+      "required": true
+    },
+    "logtime": {
+      "type": "date",
+      "required": true
+    },
+    "bprice": {
+      "type": "number",
+      "required": true
+    },
+    "aprice": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "price": {
+      "type": "belongsTo",
+      "model": "price",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

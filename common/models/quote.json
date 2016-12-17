@@ -1,0 +1,80 @@
+{
+  "name": "quote",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "required": true
+    },
+    "Tracker": true,
+    "Status": true
+  },
+  "properties": {
+    "quoteid": {
+      "type": "string",
+      "required": true
+    },
+    "logistic": {
+      "type": "string",
+      "required": true
+    },
+    "shippingrate": {
+      "type": "number",
+      "required": true
+    },
+    "expires": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customer": {
+      "type": "embedsOne",
+      "model": "customer",
+      "property": "customer"
+    },
+    "billing": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "billing"
+    },
+    "shipping": {
+      "type": "embedsOne",
+      "model": "address",
+      "property": "shipping"
+    },
+    "discount": {
+      "type": "embedsOne",
+      "model": "discount",
+      "property": "discount"
+    },
+    "paymode": {
+      "type": "embedsOne",
+      "model": "paymode",
+      "property": "paymode"
+    },
+    "value": {
+      "type": "embedsOne",
+      "model": "value",
+      "property": "value"
+    },
+    "quoteitems": {
+      "type": "hasMany",
+      "model": "quoteitem",
+      "foreignKey": ""
+    },
+    "shipments": {
+      "type": "hasMany",
+      "model": "shipment",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

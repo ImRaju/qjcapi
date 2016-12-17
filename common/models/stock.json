@@ -1,0 +1,54 @@
+{
+  "name": "stock",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "skucode": {
+      "type": "string",
+      "required": true
+    },
+    "costprice": {
+      "type": "number"
+    },
+    "activ": {
+      "type": "boolean",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stocklogs": {
+      "type": "hasMany",
+      "model": "stocklog",
+      "foreignKey": ""
+    },
+    "qty": {
+      "type": "embedsOne",
+      "model": "stockqty",
+      "property": "qty"
+    },
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": ""
+    },
+    "sku": {
+      "type": "belongsTo",
+      "model": "sku",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "indexes": {
+    "productId_index": {"productId":1},
+    "skucode_index": {"skucode":1}, "options": { "unique": true },
+    "qty.total_index": {"qty.total":1},
+    "qty.forsalel_index": {"qty.forsale":1},
+    "qty.withds_index": {"qty.withds":1},
+    "qty.onhold_index": {"qty.onhold":1}
+  },
+  "methods": {}
+}
